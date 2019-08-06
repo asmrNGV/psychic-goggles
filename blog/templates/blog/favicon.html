@@ -5,7 +5,6 @@
     <meta charset="utf-8">
     <title>FoodTruck_ASMR</title>
     <link rel="shortcut icon" type="image/x-icon" href="http://asmr.dothome.co.kr/favicon.ico" />
-
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=1024">
 
@@ -97,16 +96,16 @@
     }</style>
 
     <style>
-      .wrap {position: absolute;left: 0;bottom: 0px;width: 288px;height: 132px;margin-left: -144px;text-align: left;overflow: hidden;font-size: 10px;font-family: '타이포_쌍문동','Malgun Gothic', dotum, '돋움', sans-serif;line-height: 1.5;}
+      .wrap {position: absolute;left: 0;bottom: 0px;width: 400px;height: 200px;margin-left: -144px;ext-align: left;overflow: hidden;font-size: 10px;font-family: '타이포_쌍문동','Malgun Gothic', dotum, '돋움', sans-serif;line-height: 1.5;}
       .wrap * {padding: 0;margin: 0;}
-      .wrap .info {width: 200px;height: 120px;margin-left:40px;border-radius: 5px;border-bottom: 2px solid #ccc;border-right: 1px solid #ccc;overflow: hidden;background: #444;}
+      /*검은 박스 크기*/.wrap .info {width: 300px;height: 200px;margin-left:40px;border-radius: 5px;border-bottom: 2px solid #ccc;border-right: 1px solid #ccc;overflow: hidden;background: #444;}
       .wrap .info:nth-child(1) {border: 0;box-shadow: 0px 1px 2px #888;}
-      .info .title {padding: 5px 0 0 10px;width : 185px; height: 30px;background: #444;border-bottom: 1px solid #444;font-size: 20px;font-weight:lighter;color: #eee;text-align:center;}
-      .info .body {position: relative;overflow: hidden;}
-      .info .desc {position: relative;margin: 13px 0 0 90px;height: 75px;}
-      .info .img {position: absolute;top: 0px;left: 5px;width: 187px;height: 71px;border: 1px solid #444;color: #888;overflow: hidden; text-align:center;}
-      .triangle {position:absolute;width:24px;height:24px;top:0;left:41px;background: url('http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/triangle.png') no-repeat; text-align:center;font-size:18px;color: #eee;}
-      .info:after {content: '';position: absolute;margin-left: -12px;left: 50%;bottom: 0;width: 22px;height: 12px;background: url('http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')}
+      /*박스위 제목*/.info .title {padding: 0px 0 0 0px;width : 300px; height: 30px;background: #444;border-bottom: 1px solid #444;font-size: 20px;font-weight:lighter;color: #eee;text-align:center;}
+      /*내부박스*/.info .body {position: relative;overflow: hidden;}
+      .info .desc {position: relative;margin: 13px 0 0 13px;height: 200px;}
+      .info .img {position: absolute;top: 0px;left: 5px;width: 290px;height: 160px;border: 1px solid #444;color: #888;overflow: hidden; text-align:center;}
+      /*빨간삼각형*/.triangle {position:absolute;width:240px;height:240px;top:0;left:39.5px;background: url('http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/triangle.png') no-repeat; text-align:left;font-size:24px;color: #eee;}
+      .info:after {content: '';position: absolute;margin-left: -12px;left: 50%;bottom: 0px;width: 22px;height: 12px;background: url('http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')}
       .info .link {color: #5085BB;}
     </style>
 </head>
@@ -131,21 +130,20 @@
           <div id="info.location" class="theme">
               <div class="reportError">
                   <h3 class="screen_out">현재위치</h3>
-                  <span id="weather_place" class="approxAddr">수원시 영통구 </span>
+                  <span id="info.location.approxAddr" class="approxAddr">OO시 OO구 </span>
                   <div id="info.location.weather" class="infoAir">
                       <strong class="screen_out">날씨정보</strong>
                       <span class="txt_air">최고기온</span>
-                      <span id="max_tem" class="temper">35˚</span>
+                      <span class="temper">35˚</span>
                       <span class="txt_change">최저기온</span>
-                      <span id="min_tem" class="temper">25˚</span>
+                      <span class="temper">25˚</span>
                       <span class="txt_bar"></span>
-                      <span class="txt_dust">습도<span id="avg_rhm" data-id="dust_state" class="txt_state density1">60%</span></span>
-                      <span class="txt_dust">강수량<span id="sum_rn" data-id="micro_dust_state" class="txt_state density1">15mm</span></span>
+                      <span class="txt_dust">습도<span data-id="dust_state" class="txt_state density1">60%</span></span>
+                      <span class="txt_dust">강수량<span data-id="micro_dust_state" class="txt_state density1">15mm</span></span>
                   </div>
                   <a id="info.location.reportError" href="http://www.weather.go.kr/weather/main.jsp" class="reportbug">더보기</a>
               </div>
           </div>
-
           <div id="info.main.famous" class="famous"></div>
 
           <div id="info.main.around" class="infoAround">
@@ -242,11 +240,6 @@ var festival_tag_1 = '#공연·예술·전시#관광지#나들이';
 var festival_tag_2 = '#공연/행사#관광지#나들이#뮤직드라마당신만이#수도권#아이와함께#연인과함께#친구와함께#힐링';
 var festival_tag_3 = '#공연/행사#관광지#수도권#아이와함께#연극#연극죽여주는이야기#연인과함께#죽여주는이야기#친구와함께#힐링';
 
-var max_tem = '';
-var min_tem = '';
-var avg_rhm = '';
-var sum_rn = '';
-
 $(function(){
 			$.ajax({
 				url:  'festget',
@@ -284,11 +277,6 @@ $(function(){
           call3 = data.number3;
           gu3 = data.gu3;
           clock3 = data.clock3;
-
-          max_tem = data.max_tem;
-          min_tem = data.min_tem;
-          avg_rhm = data.avg_rhm;
-          sum_rn = data.sum_rn;
 }
 
 
@@ -303,16 +291,6 @@ $(function(){
     document.getElementById('sidebar_name2').innerHTML = gu1
     document.getElementById('sidebar_name3').innerHTML = festival_tag_1
 
-    var max_tem = max_tem.concat('˚C')
-    var min_tem = min_tem.concat('˚C')
-    var avg_rhm = avg_rhm.concat('%')
-    var sum_rn = sum_rn.concat('mm')
-
-    document.getElementById('weather_place').innerHTML = gu1
-    document.getElementById('max_tem').innerHTML = max_tem
-    document.getElementById('min_tem').innerHTML = min_tem
-    document.getElementById('avg_rhm').innerHTML = avg_rhm
-    document.getElementById('sum_rn').innerHTML = sum_rn
 
     document.getElementById('sidebar_pin').innerHTML = dest2
     document.getElementById('sidebar_clock').innerHTML = clock1
@@ -324,9 +302,9 @@ $(function(){
 
 // 주석만 지우면 autodrive가 돼
 window.onbeforeunload = function () {
-   var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", "http://192.168.137.144:8000/run/?action=autodrive", true); // false for synchronous request
-    xmlHttp.send( null );
+//   var xmlHttp = new XMLHttpRequest();
+//    xmlHttp.open( "GET", "http://192.168.137.144:8000/run/?action=autodrive", true); // false for synchronous request
+//    xmlHttp.send( null );
 };
 
 // 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
@@ -347,7 +325,7 @@ function placesSearchCB1 (data, status, pagination) {
                       '            <div class="img">' +
                       '        <div class="triangle">1</div>' +
 
-                      '                <a href="#"><img src="' + festival_img_1 + 'width="10px" height="70px" onclick="image_setting1();"/></a>' +
+                      '                <a href="#"><img src="' + festival_img_1 + 'width="200px" height="140px" onclick="image_setting1();"/></a>' +
                       '           </div>' +
                       '            <div class="desc">' +
                       '            </div>' +
@@ -380,8 +358,6 @@ function image_setting1(){
     document.getElementById('sidebar_name2').innerHTML = gu1;
     document.getElementById('sidebar_name3').innerHTML = festival_tag_1;
 
-    document.getElementById('weather_place').innerHTML = gu1
-
     document.getElementById('sidebar_pin').innerHTML = dest1;
     document.getElementById('sidebar_clock').innerHTML = clock1;
     document.getElementById('sidebar_call').innerHTML = call1;
@@ -402,7 +378,7 @@ function placesSearchCB2 (data, status, pagination) {
                       '        <div class="body">' +
                       '            <div class="img">' +
                       '        <div class="triangle">2</div>' +
-                      '                <a href="#"><img src="' + festival_img_2 + 'width="10px" height="70px" onclick="image_setting2();"/></a>' +
+                      '                <a href="#"><img src="' + festival_img_2 + 'width="200px" height="140px" onclick="image_setting2();"/></a>' +
                       '           </div>' +
                       '            <div class="desc">' +
                       '            </div>' +
@@ -435,7 +411,6 @@ function image_setting2(){
     document.getElementById('sidebar_name2').innerHTML = gu2;
     document.getElementById('sidebar_name3').innerHTML = festival_tag_2;
 
-    document.getElementById('weather_place').innerHTML = gu2
 
     document.getElementById('sidebar_pin').innerHTML = dest2;
     document.getElementById('sidebar_clock').innerHTML = clock2;
@@ -458,7 +433,7 @@ function placesSearchCB3 (data, status, pagination) {
                       '        <div class="body">' +
                       '            <div class="img">' +
                       '        <div class="triangle">3</div>' +
-                      '                <a href="#"><img src="' + festival_img_3 + 'width="10px" height="70px" onclick="image_setting3();"/></a>' +
+                      '                <a href="#"><img src="' + festival_img_3 + 'width="200px" height="140px" onclick="image_setting3();"/></a>' +
                       '           </div>' +
                       '            <div class="desc">' +
                       '            </div>' +
@@ -498,7 +473,6 @@ function image_setting3(){
     document.getElementById('sidebar_name2').innerHTML = gu3;
     document.getElementById('sidebar_name3').innerHTML = festival_tag_3;
 
-    document.getElementById('weather_place').innerHTML = gu3
 
     document.getElementById('sidebar_pin').innerHTML = dest3;
     document.getElementById('sidebar_clock').innerHTML = clock3;

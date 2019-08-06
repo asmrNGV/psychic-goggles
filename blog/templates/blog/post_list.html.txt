@@ -3,8 +3,7 @@
 <head>
 
     <meta charset="utf-8">
-    <title>FoodTruck_ASMR</title>
-    <link rel="shortcut icon" type="image/x-icon" href="http://asmr.dothome.co.kr/favicon.ico" />
+    <title>!!!미들윈도우!!!</title>
 
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=1024">
