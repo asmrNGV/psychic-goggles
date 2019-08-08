@@ -192,11 +192,9 @@
 
 
 <!--버튼-->
-
           <div id="side_button_out" style="width:0px; height:50px; position:absolute; top:300px; left:0px; z-index:3;overflow:hidden;">
 
               <script language="javascript">
-
                 function frame_open() {
                 var x = document.getElementById('info');
                 x.style.width="390px";
@@ -205,17 +203,17 @@
                 var z = document.getElementById('side_button_out');
                 z.style.width="0px";
 
+
             }
             </script>
-
               <a href="javascript:frame_open()"><img id="side_button_out_img" src="http://asmr.dothome.co.kr/button_out.png" style="cursor: pointer; width:20px; height:50px;" /></a>
 
           </div>
+
           <div id="side_button" style="width:20px; height:50px; position:absolute; top:300px; left:390px; z-index:2;overflow:hidden;">
 
 
                 <script language="javascript">
-
                 function frame_close() {
                 var x = document.getElementById('info');
                 x.style.width="1px";
@@ -224,10 +222,12 @@
                 var z = document.getElementById('side_button_out');
                 z.style.width="20px";
 
+
                 }
                 </script>
 
                 <a href="javascript:frame_close()"><img id="side_button_img" src="http://asmr.dothome.co.kr/button.png" style="cursor: pointer; width:20px; height:50px;" /></a>
+
 
         </div>
 
@@ -236,18 +236,7 @@
 
 
 
-<div id="map" style="width:1290px; height:650px;position:absolute;z-index:1;">
-  <div id="window" style="z-index:5; position: absolute; top:20px; right:20px; width:390px; height:50px;overflow:hidden;">
-                  <div id="navibar" style=" z-index=6; position:absolute; width:390px; height:50px;border-radius:7px;background-color:#33a0ff;">
-                        <img src="http://asmr.dothome.co.kr/asmr.png" width="50px"height="50px" style="border-radius:7px"/>
-                              <div id="title" style=" z-index=7;position:absolute; width:340px; height:50px; top:0px; left:50px; border-radius:7px; background-color:transparent;">
-                                    <p style="color:#ffffff;font-size:20px;font-family:'sans_serif';margin-top:10px;margin-bottom:10px;text-align:center;">FoodTruck_AutoDrive_MapService</p>
-                              </div>
-                  </div>
-            </div>
-
-
-</div>
+<div id="map" style="width:1290px; height:650px;position:absolute;z-index:1;"></div>
 <span id="maplevel"></span>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=524efbb3857d22fff767c267e6e2ce07&libraries=services"></script>
