@@ -92,29 +92,31 @@
     only screen and (-webkit-min-device-pixel-ratio: 1.5),
     only screen and (min-device-pixel-ratio: 1.5),
     only screen and (min-resolution: 144dpi),
-    only screen and (min-resolution: 1.5dppx) {
+    only screen and (min-resolution: 1.5dppx){
         .social_comm_p .img_social{background-image:url(//t1.daumcdn.net/daumtop_deco/images/common/social/rtn/img_social_180425.png);background-size:170px 160px}
     }</style>
 
     <style>
-    .wrap {position: absolute;left: 19px;bottom:-3px;width: 250px;height: 240px;margin-left: -150px;ext-align: left;overflow: hidden;font-size: 10px;font-family: '타이포_쌍문동','Malgun Gothic', dotum, '돋움', sans-serif;line-height: 1.5;}
+    /*전체 박스*/.wrap {z-index:-1;position: absolute;left: 19px;bottom:-3px;width: 250px;height: 240px;margin-left: -150px;ext-align: left;overflow: hidden;font-size: 10px;font-family: '타이포_쌍문동','Malgun Gothic', dotum, '돋움', sans-serif;line-height: 1.5;}
     .wrap * {padding: 0;margin: 0;}
-  /*검은 박스 크기*/.wrap .info {width: 250px;height: 240px;margin-left:0px;/*border-radius: 5px;border-bottom: 2px solid #ccc;border-right: 1px solid #ccc;*/overflow: hidden;/*background: #444;*/ background: url('http://asmr.dothome.co.kr/pinbox3.png'); background-repeat:no-repeat; background-size: 250px 240px;}
+    /*검은 박스 크기*/.wrap .info {width: 250px;height: 205px;margin-left:0px; padding-bottom:35px;/*border-radius: 5px;border-bottom: 2px solid #ccc;border-right: 1px solid #ccc;*/overflow: hidden;/*background: #444;*/ background: url('http://asmr.dothome.co.kr/pinbox3.png'); background-repeat:no-repeat; background-size: 250px 240px;}
     .wrap .info:nth-child(1) {border: 0;box-shadow: 0px 1px 2px #888;}
     /*박스위 제목*/.info .title {padding: 0px 0 0 0px;width : 250px; height: 30px;margin-top:5px; margin-bottom:3px;/*background: #444;*/border-bottom: 1px solid #444;font-size: 21px;font-weight:650;color: #eee;text-align:center;}
-    /*내부박스*/.info .body {position: relative;overflow: hidden; width: 250px; height: 159px;opacity: 0.8;}
-    .info .body:hover { opacity: 1; }
-    .info .desc {position: relative;margin: 150px 0 0px;height: 10px;}
-    .info .img {position: absolute;top: 0px;left: 15px;width: 218px;height: 150px;border: 1px solid #444;color: #888;overflow: hidden; text-align:center;}
+    /*내부박스*/.info .body {position: relative;overflow: hidden; width: 250px; height: 159px;opacity:0.8;}
+    .info .body:hover {opacity:1;}
+    /*클릭시정보표시*/.info .desc {position: relative;margin: 150px 0 0px;height: 10px;}
+    /*사진 들어가는창*/.info .img {position: absolute;top: 0px;left: 15px;width: 218px;height: 150px;border: 1px solid #444;color: #888;overflow: hidden; text-align:center;}
     /*빨간삼각형*/.triangle {position:absolute;;width:50px;height:50px;top:0;left:0px;background: url('http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/triangle.png') no-repeat; text-indent:0.4em;text-align:left;font-size:20px;color: #eee;}
     /*흰색핀*/.info:after {content: '';position: absolute;margin-left: -14px;left: 50%;bottom: 0%;width: 33px;height: 32px/*;background: url('http://asmr.dothome.co.kr/pin.png')*/;background-repeat: no-repeat;background-size: 33px 32px;}
     .info .link {color: #5085BB;}
     </style>
 </head>
+
+
 <body>
   <div id="info" class="Info">
 
-  	<div id="info.body" class="body" style="height: 650px;">
+  	<div id="info.body" class="body" style="height: 650px;z-index:2;">
       <img id="sidebar_image" width=372px height=240px text-align=center/>
 
       <div class="favorite_exposed">
@@ -187,17 +189,66 @@
     </div>
    </div>
   </div>
-<div id="map" style="width:900px;height:650px;"></div>
+
+
+<!--버튼-->
+          <div id="side_button_out" style="width:0px; height:50px; position:absolute; top:300px; left:0px; z-index:3;overflow:hidden;">
+
+              <script language="javascript">
+                function frame_open() {
+                var x = document.getElementById('info');
+                x.style.width="390px";
+                var y = document.getElementById('side_button');
+                y.style.width="20px";
+                var z = document.getElementById('side_button_out');
+                z.style.width="0px";
+
+
+            }
+            </script>
+              <a href="javascript:frame_open()"><img id="side_button_out_img" src="http://asmr.dothome.co.kr/button_out.png" style="cursor: pointer; width:20px; height:50px;" /></a>
+
+          </div>
+
+          <div id="side_button" style="width:20px; height:50px; position:absolute; top:300px; left:390px; z-index:2;overflow:hidden;">
+
+
+                <script language="javascript">
+                function frame_close() {
+                var x = document.getElementById('info');
+                x.style.width="1px";
+                var y = document.getElementById('side_button');
+                y.style.width="0px";
+                var z = document.getElementById('side_button_out');
+                z.style.width="20px";
+
+
+                }
+                </script>
+
+                <a href="javascript:frame_close()"><img id="side_button_img" src="http://asmr.dothome.co.kr/button.png" style="cursor: pointer; width:20px; height:50px;" /></a>
+
+
+        </div>
+
+
+
+
+
+
+<div id="map" style="width:1290px; height:650px;position:absolute;z-index:1;"></div>
 <span id="maplevel"></span>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=524efbb3857d22fff767c267e6e2ce07&libraries=services"></script>
 
 <script tpye="text/javascript">
 
+
+
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div
     mapOption = {
         center: new kakao.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
-        level: 4 // 지도의 확대 레벨
+        level: 3 // 지도의 확대 레벨
     };
 
 // 지도를 생성합니다
@@ -377,7 +428,7 @@ function image_setting1(){
     document.getElementById('sidebar_name2').innerHTML = gu1;
     document.getElementById('sidebar_name3').innerHTML = festival_tag_1;
 
-    document.getElementById('weather_place').innerHTML = gu1
+    document.getElementById('weather_place').innerHTML = gu1;
 
     document.getElementById('sidebar_pin').innerHTML = dest1;
     document.getElementById('sidebar_clock').innerHTML = clock1;
