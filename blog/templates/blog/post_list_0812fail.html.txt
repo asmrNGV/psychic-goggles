@@ -97,11 +97,12 @@
     }</style>
 
     <style>
-    /*전체 박스*/.wrap {z-index:-1;position: absolute;left: 19px;bottom:-3px;width: 250px;height: 240px;margin-left: -150px;ext-align: left;overflow: hidden;font-size: 10px;font-family: '타이포_쌍문동','Malgun Gothic', dotum, '돋움', sans-serif;line-height: 1.5;}
+    /*전체 박스*/.wrap {z-index:-1;position: absolute;left: 19px;bottom:-3px;width: 300px;height: 240px;margin-left: -150px;ext-align: left;overflow: hidden;font-size: 10px;font-family: '타이포_쌍문동','Malgun Gothic', dotum, '돋움', sans-serif;line-height: 1.5;}
     .wrap * {padding: 0;margin: 0;}
     /*검은 박스 크기*/.wrap .info {width: 250px;height: 205px;margin-left:0px; padding-bottom:35px;/*border-radius: 5px;border-bottom: 2px solid #ccc;border-right: 1px solid #ccc;*/overflow: hidden;/*background: #444;*/ background: url('http://asmr.dothome.co.kr/pinbox3.png'); background-repeat:no-repeat; background-size: 250px 240px;}
     .wrap .info:nth-child(1) {border: 0;box-shadow: 0px 1px 2px #888;}
     /*박스위 제목*/.info .title {padding: 0px 0 0 0px;width : 250px; height: 30px;margin-top:5px; margin-bottom:3px;/*background: #444;*/border-bottom: 1px solid #444;font-size: 21px;font-weight:650;color: #eee;text-align:center;}
+
     /*내부박스*/.info .body {position: relative;overflow: hidden; width: 250px; height: 159px;opacity:0.8;}
     .info .body:hover {opacity:1;}
     /*클릭시정보표시*/.info .desc {position: relative;margin: 150px 0 0px;height: 10px;}
@@ -114,9 +115,9 @@
 
 
 <body>
-  <div id="info" class="Info">
+  <div id="info" class="Info" style="width:1px;">
 
-  	<div id="info.body" class="body" style="height: 650px;z-index:2;">
+  	<div id="info.body" class="body" style="height:853px;z-index:2;">
       <img id="sidebar_image" width=372px height=240px text-align=center/>
 
       <div class="favorite_exposed">
@@ -178,10 +179,12 @@
 
           <div id="info.main.newplace" class="newplace">
               <div class="newPlace">
-                  <h6 class="tit_newplace">새로운 장소(여기에다가는 예상 판매량 넣을 꺼)</h6>
+                  <img id="gain" width=320px scr="http://asmr.dothome.co.kr/total1.jpg"/>
+                  <!--<h6 class="tit_newplace">새로운 장소(여기에다가는 예상 판매량 넣을 꺼)</h6>
                   <p class="desc_newplace">새로운 수정된 장소를 알고 계세요?<br>장소 제보는 지도 품질 향상에 큰 도움이 됩니다.</p>
                   <a href="#none" class="xc link_newplace link_suggest" data-pos="left" data-channel="SEARCH_MIDDLE_NEWPLACE">신규 장소 등록</a>
                   <a href="#none" class="xb link_newplace link_modify" data-pos="left" data-channel="SEARCH_MIDDLE_MODIFYMAP">지도 정보 수정</a>
+                -->
               </div>
           </div>
 
@@ -191,63 +194,70 @@
   </div>
 
 
-<!--버튼-->
 
-          <div id="side_button_out" style="width:0px; height:50px; position:absolute; top:300px; left:0px; z-index:3;overflow:hidden;">
 
-              <script language="javascript">
+  <!--버튼-->
 
-                function frame_open() {
-                var x = document.getElementById('info');
-                x.style.width="390px";
-                var y = document.getElementById('side_button');
-                y.style.width="20px";
-                var z = document.getElementById('side_button_out');
-                z.style.width="0px";
-
-            }
-            </script>
-
-              <a href="javascript:frame_open()"><img id="side_button_out_img" src="http://asmr.dothome.co.kr/button_out.png" style="cursor: pointer; width:20px; height:50px;" /></a>
-
-          </div>
-          <div id="side_button" style="width:20px; height:50px; position:absolute; top:300px; left:390px; z-index:2;overflow:hidden;">
-
+            <div id="side_button_out" style="width:20px; height:50px; position:absolute; top:400px; left:0px; z-index:3;overflow:hidden;">
 
                 <script language="javascript">
 
-                function frame_close() {
-                var x = document.getElementById('info');
-                x.style.width="1px";
-                var y = document.getElementById('side_button');
-                y.style.width="0px";
-                var z = document.getElementById('side_button_out');
-                z.style.width="20px";
+                  function frame_open() {
+                  var x = document.getElementById('info');
+                  x.style.width="390px";
+                  var y = document.getElementById('side_button');
+                  y.style.width="20px";
+                  var z = document.getElementById('side_button_out');
+                  z.style.width="0px";
+                  var a = document.getElementById('map');
+                  a.style.width="890px";
+                  a.style.left="390px";
 
-                }
-                </script>
+              }
+              </script>
 
-                <a href="javascript:frame_close()"><img id="side_button_img" src="http://asmr.dothome.co.kr/button.png" style="cursor: pointer; width:20px; height:50px;" /></a>
+                <a href="javascript:frame_open()"><img id="side_button_out_img" src="http://asmr.dothome.co.kr/button_out.png" style="cursor: pointer; width:20px; height:50px;" /></a>
 
-        </div>
-
-
-
+            </div>
+            <div id="side_button" style="width:0px; height:50px; position:absolute; top:400px; left:390px; z-index:2;overflow:hidden;">
 
 
+                  <script language="javascript">
 
-<div id="map" style="width:1290px; height:650px;position:absolute;z-index:1;">
-  <div id="window" style="z-index:5; position: absolute; top:20px; right:20px; width:390px; height:50px;overflow:hidden;">
+                  function frame_close() {
+                  var x = document.getElementById('info');
+                  x.style.width="1px";
+                  var y = document.getElementById('side_button');
+                  y.style.width="0px";
+                  var z = document.getElementById('side_button_out');
+                  z.style.width="20px";
+                  var a = document.getElementById('map');
+                  a.style.width="1280px";
+                  a.style.left="0px";
+
+                  }
+                  </script>
+
+                  <a href="javascript:frame_close()"><img id="side_button_img" src="http://asmr.dothome.co.kr/button.png" style="cursor: pointer; width:20px; height:50px;" /></a>
+
+          </div>
+
+
+
+
+<div id="map" style="width:1280px; height:853px;position:absolute; left:0px;z-index:1;">
+          <div id="window" style="z-index:5; position: absolute; top:20px; right:20px; width:390px; height:50px;overflow:hidden;">
                   <div id="navibar" style=" z-index=6; position:absolute; width:390px; height:50px;border-radius:7px;background-color:#33a0ff;">
                         <img src="http://asmr.dothome.co.kr/asmr.png" width="50px"height="50px" style="border-radius:7px"/>
                               <div id="title" style=" z-index=7;position:absolute; width:340px; height:50px; top:0px; left:50px; border-radius:7px; background-color:transparent;">
                                     <p style="color:#ffffff;font-size:20px;font-family:'sans_serif';margin-top:10px;margin-bottom:10px;text-align:center;">FoodTruck_AutoDrive_MapService</p>
                               </div>
                   </div>
-            </div>
-
-
+          </div>
 </div>
+
+
+
 <span id="maplevel"></span>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=524efbb3857d22fff767c267e6e2ce07&libraries=services"></script>
@@ -310,6 +320,14 @@ var min_tem = '';
 var avg_rhm = '';
 var sum_rn = '';
 
+var gain1 = "http://asmr.dothome.co.kr/total1.jpg";
+var gain2 = "http://asmr.dothome.co.kr/total2.jpg";
+var gain3 = "http://asmr.dothome.co.kr/total3.jpg";
+
+
+
+
+
 $(function(){
 			$.ajax({
 				url:  'festget',
@@ -323,6 +341,7 @@ $(function(){
 					dest1 = data.address1;
 					dest1_1 = data.address1.replace(/ /g, '%20');
 					festival_img_1 = data.img1;
+          gain=data.img4
 					festival_tag_1 = data.tag1;
           call1 = data.number1;
           gu1 = data.gu1;
@@ -333,6 +352,7 @@ $(function(){
 					dest2 = data.address2;
 					dest2_1 = data.address2.replace(/ /g, '%20');
 					festival_img_2 = data.img2;
+          gain2=data.img5
 					festival_tag_2 = data.tag2;
           call2 = data.number2;
           gu2 = data.gu2;
@@ -343,6 +363,7 @@ $(function(){
 					dest3 = data.address3;
 					dest3_1 = data.address3.replace(/ /g, '%20');
 					festival_img_3 = data.img3;
+          gain3 = data.img6;
 					festival_tag_3 = data.tag3;
           call3 = data.number3;
           gu3 = data.gu3;
@@ -361,7 +382,9 @@ $(function(){
 		ps.keywordSearch(dest2, placesSearchCB2);
 		ps.keywordSearch(dest3, placesSearchCB3);
     var m_img = document.getElementById('sidebar_image');
+    var g_img = document.getElementById('gain');
     m_img.src = festival_img_1.replace('&thumb', ' ');
+    g_img.src = gain1.replace('&thumb','');
     document.getElementById('sidebar_name').innerHTML = festival_name_1
     document.getElementById('sidebar_name2').innerHTML = gu1
     document.getElementById('sidebar_name3').innerHTML = festival_tag_1
@@ -380,9 +403,17 @@ $(function(){
     document.getElementById('sidebar_pin').innerHTML = dest1
     document.getElementById('sidebar_clock').innerHTML = clock1
     document.getElementById('sidebar_call').innerHTML = call1
-
     document.getElementById('sidebar_link').href = link_template.concat(dest1_1)
+    document.getElementById('gain').href = link_template.concat(gain1)
+
 		}
+
+
+
+
+
+
+
 
 
   )
@@ -406,7 +437,7 @@ function placesSearchCB1 (data, status, pagination) {
                       '    <div class="info">' +
                       '        <div class="title">' +
                       festival_name_1_a +
-                      '            <div class="close" onclick="closeOverlay()" title="닫기"></div>' +
+                                  '<div class="close" onclick="closeOverlay()" title="닫기"></div>' +
                       '        </div>' +
                       '        <div class="body">' +
                       '            <div class="img">' +
@@ -420,6 +451,8 @@ function placesSearchCB1 (data, status, pagination) {
                       '    </div>' +
                       '</div>';
             var iwPosition = new kakao.maps.LatLng(data[i].y, data[i].x)
+
+
 
             // 마커를 중심으로 커스텀 오버레이를 표시하기위해 CSS를 이용해 위치를 설정했습니다
             var overlay = new kakao.maps.CustomOverlay({
@@ -437,6 +470,8 @@ function placesSearchCB1 (data, status, pagination) {
 
 function image_setting1(){
     document.getElementById('sidebar_image').src = festival_img_1.replace('&thumb', ' '); // &thumb를 붙이면 해상도 sh*t
+    document.getElementById('gain').src = gain1.replace('&thumb', ' '); // &thumb를 붙이면 해상도 sh*t
+
     document.getElementById('sidebar_name').innerHTML = festival_name_1;
     document.getElementById('sidebar_name2').innerHTML = gu1;
     document.getElementById('sidebar_name3').innerHTML = festival_tag_1;
@@ -446,8 +481,21 @@ function image_setting1(){
     document.getElementById('sidebar_pin').innerHTML = dest1;
     document.getElementById('sidebar_clock').innerHTML = clock1;
     document.getElementById('sidebar_call').innerHTML = call1;
+    document.getElementById('gain').href = link_template.concat(gain1);
 
-    document.getElementById('sidebar_link').href = link_template.concat(dest1_1)
+
+
+    document.getElementById('sidebar_link').href = link_template.concat(dest1_1);
+
+    var x = document.getElementById('info');
+    x.style.width="390px";
+    var y = document.getElementById('side_button');
+    y.style.width="20px";
+    var z = document.getElementById('side_button_out');
+    z.style.width="0px";
+    var a = document.getElementById('map');
+    a.style.width="900px";
+    a.style.left="390px";
 }
 
 function placesSearchCB2 (data, status, pagination) {
@@ -472,6 +520,8 @@ function placesSearchCB2 (data, status, pagination) {
                       '</div>';
             var iwPosition = new kakao.maps.LatLng(data[i].y, data[i].x)
 
+
+
             // 마커를 중심으로 커스텀 오버레이를 표시하기위해 CSS를 이용해 위치를 설정했습니다
             var overlay = new kakao.maps.CustomOverlay({
                 content: content,
@@ -488,6 +538,8 @@ function placesSearchCB2 (data, status, pagination) {
 
 function image_setting2(){
     document.getElementById('sidebar_image').src = festival_img_2.replace('&thumb', ' '); // &thumb를 붙이면 해상도 sh*t
+    document.getElementById('gain').src = gain2.replace('&thumb', ' '); // &thumb를 붙이면 해상도 sh*t
+
     document.getElementById('sidebar_name').innerHTML = festival_name_2;
     document.getElementById('sidebar_name2').innerHTML = gu2;
     document.getElementById('sidebar_name3').innerHTML = festival_tag_2;
@@ -497,8 +549,19 @@ function image_setting2(){
     document.getElementById('sidebar_pin').innerHTML = dest2;
     document.getElementById('sidebar_clock').innerHTML = clock2;
     document.getElementById('sidebar_call').innerHTML = call2;
+    document.getElementById('gain').href = link_template.concat(gain2);
 
-    document.getElementById('sidebar_link').href = link_template.concat(dest2_1)
+    document.getElementById('sidebar_link').href = link_template.concat(dest2_1);
+
+    var x = document.getElementById('info');
+    x.style.width="390px";
+    var y = document.getElementById('side_button');
+    y.style.width="20px";
+    var z = document.getElementById('side_button_out');
+    z.style.width="0px";
+    var a = document.getElementById('map');
+    a.style.width="900px";
+    a.style.left="390px";
 
 }
 
@@ -524,6 +587,8 @@ function placesSearchCB3 (data, status, pagination) {
                       '</div>';
             var iwPosition = new kakao.maps.LatLng(data[i].y, data[i].x)
 
+
+
             // 마커를 중심으로 커스텀 오버레이를 표시하기위해 CSS를 이용해 위치를 설정했습니다
             var overlay = new kakao.maps.CustomOverlay({
                 content: content,
@@ -547,6 +612,8 @@ function placesSearchCB3 (data, status, pagination) {
 
 function image_setting3(){
     document.getElementById('sidebar_image').src = festival_img_3.replace('&thumb', ' '); // &thumb를 붙이면 해상도 sh*t
+    document.getElementById('gain').src = gain3.replace('&thumb', ' '); // &thumb를 붙이면 해상도 sh*t
+
     document.getElementById('sidebar_name').innerHTML = festival_name_3;
     document.getElementById('sidebar_name2').innerHTML = gu3;
     document.getElementById('sidebar_name3').innerHTML = festival_tag_3;
@@ -556,8 +623,19 @@ function image_setting3(){
     document.getElementById('sidebar_pin').innerHTML = dest3;
     document.getElementById('sidebar_clock').innerHTML = clock3;
     document.getElementById('sidebar_call').innerHTML = call3;
+    document.getElementById('gain').href = link_template.concat(gain3);
 
-    document.getElementById('sidebar_link').href = link_template.concat(dest3_1)
+    document.getElementById('sidebar_link').href = link_template.concat(dest3_1);
+
+    var x = document.getElementById('info');
+    x.style.width="390px";
+    var y = document.getElementById('side_button');
+    y.style.width="20px";
+    var z = document.getElementById('side_button_out');
+    z.style.width="0px";
+    var a = document.getElementById('map');
+    a.style.width="900px";
+    a.style.left="390px";
 
 }
 
