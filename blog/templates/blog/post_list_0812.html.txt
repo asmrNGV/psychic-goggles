@@ -377,9 +377,11 @@ $(function(){
     document.getElementById('avg_rhm').innerHTML = avg_rhm
     document.getElementById('sum_rn').innerHTML = sum_rn
 
-    document.getElementById('sidebar_pin').innerHTML = dest2
+    document.getElementById('sidebar_pin').innerHTML = dest1
     document.getElementById('sidebar_clock').innerHTML = clock1
     document.getElementById('sidebar_call').innerHTML = call1
+
+    document.getElementById('sidebar_link').href = link_template.concat(dest1_1)
 		}
 
 
