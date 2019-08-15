@@ -214,22 +214,6 @@
     }
 
     </style>
-    <style>
-    .refresh_button {
-        border:5px;
-        border-color:#333;
-        border-radius:2.5px;
-        background-color: #333;
-        color: #fff;
-        text-align:center;
-        left:50%;
-        width:100px;
-        height:30px;
-        margin-left:110.5px;
-        margin-right:110.5px;
-    }
-
-    </style>
 </head>
 
 
@@ -299,7 +283,7 @@
           <div id="info.main.newplace" class="newplace">
               <div class="newPlace">
                 <div class="wrapper">
-                  <p class="sale">오늘의 판매 예측량</p>
+                  <p class="sale">메뉴별 판매 예측량</p>
                     <ul class="graph">
                         <li class="straw"><h2>Strawberry</h2><strong><span id="str">50잔</span></strong></li>
                         <li class="watermelon"><h2>watermelon</h2><strong><span id="wat">50잔</span></strong></li>
@@ -314,19 +298,7 @@
                 -->
               </div>
           </div>
-          <div id="refresh" class="newplace">
-              <div class="newPlace">
-                  <button onclick="openTextFile()" class="refresh_button">실시간분석</button>
-                              </div>
-          </div>
-            <div id='output'>...</div>
-<script type="text/javascript">
-function openTextFile() {
-    var input = document.createElement("input");
-    var hi = "http://asmr.dothome.co.kr/hi.txt"
-    
-}
-</script>
+
      </div>
     </div>
    </div>
