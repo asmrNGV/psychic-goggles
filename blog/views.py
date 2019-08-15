@@ -132,6 +132,11 @@ def Festivalget(request):
         'min_tem' : weather['min_tem'],
         'avg_rhm' : weather['avg_rhm'],
         'sum_rn' : weather['sum_rn'],
+
+        'str1' : weather['str1'],
+        'wat1' : weather['wat1'],
+        'ban1' : weather['ban1'],
+        'blu1' : weather['blu1'],
     }
 
     return JsonResponse(data)
