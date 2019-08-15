@@ -168,10 +168,10 @@
     }
 
     .graph li.straw span{
-      color:#000;
+      color:#333;
       display:block;
       background-color: #f55656;
-      width:0%;
+      width:75%;
       height:100%;
       border-top-right-radius: 5px;
       border-bottom-right-radius: 5px;
@@ -179,10 +179,10 @@
     }
 
     .graph li.watermelon span{
-      color:#000;
+      color:#333;
       display:block;
       background-color: #7ffa64;
-      width:0%;
+      width:50%;
       height:100%;
       border-top-right-radius: 5px;
       border-bottom-right-radius: 5px;
@@ -191,10 +191,10 @@
 
 
     .graph li.banana span{
-      color:#000;
+      color:#333;
       display:block;
       background-color: #f5f24c;
-      width: 0%;
+      width: 90%;
       height:100%;
       border-top-right-radius: 5px;
       border-bottom-right-radius: 5px;
@@ -203,10 +203,10 @@
 
 
     .graph li.blueberry span{
-      color:#000;
+      color:#333;
       display:block;
       background-color: #cb59ff;
-      width:0%;
+      width:60%;
       height:100%;
       border-top-right-radius: 5px;
       border-bottom-right-radius: 5px;
@@ -301,10 +301,10 @@
                 <div class="wrapper">
                   <p class="sale">오늘의 판매 예측량</p>
                     <ul class="graph">
-                        <li class="straw"><h2>Strawberry</h2><strong><span id="str">잔</span></strong></li>
-                        <li class="watermelon"><h2>watermelon</h2><strong><span id="wat">잔</span></strong></li>
-                        <li class="banana"><h2>Banana</h2><strong><span id="ban">잔</span></strong></li>
-                        <li class="blueberry"><h2>Blueberry</h2><strong><span id="blu">잔</span></strong></li>
+                        <li class="straw"><h2>Strawberry</h2><strong><span id="str">50잔</span></strong></li>
+                        <li class="watermelon"><h2>watermelon</h2><strong><span id="wat">50잔</span></strong></li>
+                        <li class="banana"><h2>Banana</h2><strong><span id="ban">25잔</span></strong></li>
+                        <li class="blueberry"><h2>Blueberry</h2><strong><span id="blu">60잔</span></strong></li>
                     </ul>
                   </div>
                   <!--<h6 class="tit_newplace">새로운 장소(여기에다가는 예상 판매량 넣을 꺼)</h6>
@@ -317,27 +317,15 @@
           <div id="refresh" class="newplace">
               <div class="newPlace">
                   <button onclick="openTextFile()" class="refresh_button">실시간분석</button>
-              </div>
+                              </div>
           </div>
-                  <script type="text/javascript">
-                      function openTextFile()
-                      {
-                        document.getElementById('str').innerHTML = str1+"잔";
-                        document.getElementById('ban').innerHTML = ban1+"잔";
-                        document.getElementById('blu').innerHTML = blu1+"잔";
-                        document.getElementById('wat').innerHTML = wat1+"잔";
-                        document.getElementById('str').style.width = str1 + "%";
-                        document.getElementById('ban').style.width = ban1 + "%";
-                        document.getElementById('wat').style.width = wat1 + "%";
-                        document.getElementById('blu').style.width = blu1 + "%";
-                        document.getElementById('str').style.color = "#000";
-                        document.getElementById('wat').style.color = "#000";
-                        document.getElementById('ban').style.color = "#000";
-                        document.getElementById('blu').style.color = "#000";
+            <div id='output'>...</div>
+<script type="text/javascript">
+function openTextFile() {
+    var input = document.createElement("input");
+    var hi = "http://asmr.dothome.co.kr/hi.txt"
 
-
-
-                      }
+}
 </script>
      </div>
     </div>
@@ -471,15 +459,10 @@ var min_tem = '';
 var avg_rhm = '';
 var sum_rn = '';
 
-var str0 = '';
-var wat0 = '';
-var ban0 = '';
-var blu0 = '';
-
-var str1 = '20';
-var wat1 = '54';
-var ban1 = '17';
-var blu1 = '57';
+var str1 = '';
+var wat1 = '';
+var ban1 = '';
+var blu1 = '';
 
 $(function(){
 			$.ajax({
@@ -638,19 +621,14 @@ function image_setting1(){
     document.getElementById('sidebar_clock').innerHTML = clock1;
     document.getElementById('sidebar_call').innerHTML = call1;
 
-    document.getElementById('str').innerHTML = str0+"잔";
-    document.getElementById('str').style.width = "0%";
-    document.getElementById('wat').innerHTML = wat0+"잔";
-    document.getElementById('wat').style.width = "0%";
-    document.getElementById('ban').innerHTML = ban0+"잔";
-    document.getElementById('ban').style.width = "0%";
-    document.getElementById('blu').innerHTML = blu0+"잔";
-    document.getElementById('blu').style.width = "0%";
-
-    document.getElementById('str').style.color = "#666";
-    document.getElementById('wat').style.color = "#666";
-    document.getElementById('ban').style.color = "#666";
-    document.getElementById('blu').style.color = "#666";
+    document.getElementById('str').innerHTML = str1+"잔";
+    document.getElementById('str').style.width = str1+"%";
+    document.getElementById('wat').innerHTML = wat1+"잔";
+    document.getElementById('wat').style.width = wat1+"%";
+    document.getElementById('ban').innerHTML = ban1+"잔";
+    document.getElementById('ban').style.width = ban1+"%";
+    document.getElementById('blu').innerHTML = blu1+"잔";
+    document.getElementById('blu').style.width = blu1+"%";
 
     document.getElementById('sidebar_link').href = link_template.concat(dest1_1);
 
@@ -716,19 +694,14 @@ function image_setting2(){
     document.getElementById('sidebar_clock').innerHTML = clock2;
     document.getElementById('sidebar_call').innerHTML = call2;
 
-    document.getElementById('str').innerHTML = str0+"잔";
-    document.getElementById('str').style.width = "0%";
-    document.getElementById('wat').innerHTML = wat0+"잔";
-    document.getElementById('wat').style.width = "0%";
-    document.getElementById('ban').innerHTML = ban0+"잔";
-    document.getElementById('ban').style.width = "0%";
-    document.getElementById('blu').innerHTML = blu0+"잔";
-    document.getElementById('blu').style.width = "0%";
-
-    document.getElementById('str').style.color = "#666";
-    document.getElementById('wat').style.color = "#666";
-    document.getElementById('ban').style.color = "#666";
-    document.getElementById('blu').style.color = "#666";
+    document.getElementById('str').innerHTML = str1+"잔";
+    document.getElementById('str').style.width = str1+"%";
+    document.getElementById('wat').innerHTML = wat1+"잔";
+    document.getElementById('wat').style.width = wat1+"%";
+    document.getElementById('ban').innerHTML = ban1+"잔";
+    document.getElementById('ban').style.width = ban1+"%";
+    document.getElementById('blu').innerHTML = blu1+"잔";
+    document.getElementById('blu').style.width = blu1+"%";
 
     var x = document.getElementById('info');
     x.style.width="390px";
@@ -800,19 +773,14 @@ function image_setting3(){
     document.getElementById('sidebar_clock').innerHTML = clock3;
     document.getElementById('sidebar_call').innerHTML = call3;
 
-    document.getElementById('str').innerHTML = str0+"잔";
-    document.getElementById('str').style.width = "0%";
-    document.getElementById('wat').innerHTML = wat0+"잔";
-    document.getElementById('wat').style.width = "0%";
-    document.getElementById('ban').innerHTML = ban0+"잔";
-    document.getElementById('ban').style.width = "0%";
-    document.getElementById('blu').innerHTML = blu0+"잔";
-    document.getElementById('blu').style.width = "0%";
-
-    document.getElementById('str').style.color = "#666";
-    document.getElementById('wat').style.color = "#666";
-    document.getElementById('ban').style.color = "#666";
-    document.getElementById('blu').style.color = "#666";
+    document.getElementById('str').innerHTML = str1+"잔";
+    document.getElementById('str').style.width = str1+"%";
+    document.getElementById('wat').innerHTML = wat1+"잔";
+    document.getElementById('wat').style.width = wat1+"%";
+    document.getElementById('ban').innerHTML = ban1+"잔";
+    document.getElementById('ban').style.width = ban1+"%";
+    document.getElementById('blu').innerHTML = blu1+"잔";
+    document.getElementById('blu').style.width = blu1+"%";
 
 
     document.getElementById('sidebar_link').href = link_template.concat(dest3_1);
