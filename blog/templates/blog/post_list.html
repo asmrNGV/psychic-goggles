@@ -324,7 +324,7 @@
 function openTextFile() {
     var input = document.createElement("input");
     var hi = "http://asmr.dothome.co.kr/hi.txt"
-    
+
 }
 </script>
      </div>
@@ -460,20 +460,9 @@ var avg_rhm = '';
 var sum_rn = '';
 
 var str1 = '30';
-var str2 = '50';
-var str3 = '70';
-
 var wat1 = '40';
-var wat2 = '90';
-var wat3 = '50';
-
 var ban1 = '80';
-var ban2 = '30';
-var ban3 = '60';
-
 var blu1 = '20';
-var blu2 = '30';
-var blu3 = '50';
 
 $(function(){
 			$.ajax({
@@ -517,6 +506,11 @@ $(function(){
           min_tem = data.min_tem;
           avg_rhm = data.avg_rhm;
           sum_rn = data.sum_rn;
+
+          str1 = data.str1;
+          wat1 = data.wat1;
+          ban1 = data.ban1;
+          blu1 = data.blu1;
 }
 
 
@@ -700,14 +694,14 @@ function image_setting2(){
     document.getElementById('sidebar_clock').innerHTML = clock2;
     document.getElementById('sidebar_call').innerHTML = call2;
 
-    document.getElementById('str').innerHTML = str2+"잔";
-    document.getElementById('str').style.width = str2+"%";
-    document.getElementById('wat').innerHTML = wat2+"잔";
-    document.getElementById('wat').style.width = wat2+"%";
-    document.getElementById('ban').innerHTML = ban2+"잔";
-    document.getElementById('ban').style.width = ban2+"%";
-    document.getElementById('blu').innerHTML = blu2+"잔";
-    document.getElementById('blu').style.width = blu2+"%";
+    document.getElementById('str').innerHTML = str1+"잔";
+    document.getElementById('str').style.width = str1+"%";
+    document.getElementById('wat').innerHTML = wat1+"잔";
+    document.getElementById('wat').style.width = wat1+"%";
+    document.getElementById('ban').innerHTML = ban1+"잔";
+    document.getElementById('ban').style.width = ban1+"%";
+    document.getElementById('blu').innerHTML = blu1+"잔";
+    document.getElementById('blu').style.width = blu1+"%";
 
     var x = document.getElementById('info');
     x.style.width="390px";
@@ -779,14 +773,14 @@ function image_setting3(){
     document.getElementById('sidebar_clock').innerHTML = clock3;
     document.getElementById('sidebar_call').innerHTML = call3;
 
-    document.getElementById('str').innerHTML = str3+"잔";
-    document.getElementById('str').style.width = str3+"%";
-    document.getElementById('wat').innerHTML = wat3+"잔";
-    document.getElementById('wat').style.width = wat3+"%";
-    document.getElementById('ban').innerHTML = ban3+"잔";
-    document.getElementById('ban').style.width = ban3+"%";
-    document.getElementById('blu').innerHTML = blu3+"잔";
-    document.getElementById('blu').style.width = blu3+"%";
+    document.getElementById('str').innerHTML = str1+"잔";
+    document.getElementById('str').style.width = str1+"%";
+    document.getElementById('wat').innerHTML = wat1+"잔";
+    document.getElementById('wat').style.width = wat1+"%";
+    document.getElementById('ban').innerHTML = ban1+"잔";
+    document.getElementById('ban').style.width = ban1+"%";
+    document.getElementById('blu').innerHTML = blu1+"잔";
+    document.getElementById('blu').style.width = blu1+"%";
 
 
     document.getElementById('sidebar_link').href = link_template.concat(dest3_1);

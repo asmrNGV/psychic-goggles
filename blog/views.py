@@ -51,6 +51,11 @@ def run(request):
     weather['avg_rhm'] = weather_data[2]
     weather['sum_rn'] = weather_data[3]
 
+    weather['str1'] = weather_data[4]
+    weather['wat1'] = weather_data[5]
+    weather['ban1'] = weather_data[6]
+    weather['blu1'] = weather_data[7]
+
     print(weather_data)
 
 
