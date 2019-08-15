@@ -320,62 +320,24 @@
               </div>
           </div>
                   <script type="text/javascript">
-                      function openTextFile() {
-                      if(document.getElementById('sidebar_name').innerHTML == festival_name_1)
+                      function openTextFile()
                       {
                         document.getElementById('str').innerHTML = str1+"잔";
                         document.getElementById('ban').innerHTML = ban1+"잔";
                         document.getElementById('blu').innerHTML = blu1+"잔";
                         document.getElementById('wat').innerHTML = wat1+"잔";
-
                         document.getElementById('str').style.width = str1 + "%";
                         document.getElementById('ban').style.width = ban1 + "%";
                         document.getElementById('wat').style.width = wat1 + "%";
                         document.getElementById('blu').style.width = blu1 + "%";
-
-                        document.getElementById('str').style.color = "#000";
-                        document.getElementById('wat').style.color = "#000";
-                        document.getElementById('ban').style.color = "#000";
-                        document.getElementById('blu').style.color = "#000";
-                      }
-                      else if(document.getElementById('sidebar_name').innerHTML == festival_name_2)
-                      {
-                        document.getElementById('str').innerHTML = str2+"잔";
-                        document.getElementById('ban').innerHTML = ban2+"잔";
-                        document.getElementById('blu').innerHTML = blu2+"잔";
-                        document.getElementById('wat').innerHTML = wat2+"잔";
-
-                        document.getElementById('str').style.width = str2 + "%";
-                        document.getElementById('ban').style.width = ban2 + "%";
-                        document.getElementById('wat').style.width = wat2 + "%";
-                        document.getElementById('blu').style.width = blu2 + "%";
-
-                        document.getElementById('str').style.color = "#000";
-                        document.getElementById('wat').style.color = "#000";
-                        document.getElementById('ban').style.color = "#000";
-                        document.getElementById('blu').style.color = "#000";
-
-                      }
-                      else {
-
-                        document.getElementById('str').innerHTML = str3+"잔";
-                        document.getElementById('ban').innerHTML = ban3+"잔";
-                        document.getElementById('blu').innerHTML = blu3+"잔";
-                        document.getElementById('wat').innerHTML = wat3+"잔";
-
-                        document.getElementById('str').style.width = str3 + "%";
-                        document.getElementById('ban').style.width = ban3 + "%";
-                        document.getElementById('wat').style.width = wat3 + "%";
-                        document.getElementById('blu').style.width = blu3 + "%";
-
                         document.getElementById('str').style.color = "#000";
                         document.getElementById('wat').style.color = "#000";
                         document.getElementById('ban').style.color = "#000";
                         document.getElementById('blu').style.color = "#000";
 
 
+
                       }
-                    }
 </script>
      </div>
     </div>
@@ -518,16 +480,6 @@ var str1 = '20';
 var wat1 = '54';
 var ban1 = '17';
 var blu1 = '57';
-
-var str2 = '36';
-var wat2 = '31';
-var ban2 = '87';
-var blu2 = '97';
-
-var str3 = '24';
-var wat3 = '74';
-var ban3 = '52';
-var blu3 = '47';
 
 $(function(){
 			$.ajax({

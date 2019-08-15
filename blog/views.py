@@ -55,6 +55,15 @@ def run(request):
     weather['wat1'] = weather_data[5]
     weather['ban1'] = weather_data[6]
     weather['blu1'] = weather_data[7]
+    weather['str2'] = weather_data[8]
+    weather['wat2'] = weather_data[9]
+    weather['ban2'] = weather_data[10]
+    weather['blu2'] = weather_data[11]
+    weather['str3'] = weather_data[12]
+    weather['wat3'] = weather_data[13]
+    weather['ban3'] = weather_data[14]
+    weather['blu3'] = weather_data[15]
+
 
     print(weather_data)
 
@@ -137,6 +146,14 @@ def Festivalget(request):
         'wat1' : weather['wat1'],
         'ban1' : weather['ban1'],
         'blu1' : weather['blu1'],
+        'str2' : weather['str2'],
+        'wat2' : weather['wat2'],
+        'ban2' : weather['ban2'],
+        'blu2' : weather['blu2'],
+        'str3' : weather['str3'],
+        'wat3' : weather['wat3'],
+        'ban3' : weather['ban3'],
+        'blu3' : weather['blu3']
     }
 
     return JsonResponse(data)
