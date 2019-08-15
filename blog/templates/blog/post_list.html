@@ -635,7 +635,7 @@ $(function(){
 // 주석만 지우면 autodrive가 돼
 window.onbeforeunload = function () {
    var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", "http://192.168.137.144:8000/run/?action=autodrive", true); // false for synchronous request
+    xmlHttp.open( "GET", "http://192.168.137.161:8000/run/?action=autodrive", true); // false for synchronous request
     xmlHttp.send( null );
 };
 
